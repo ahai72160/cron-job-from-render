@@ -1,0 +1,8 @@
+services:
+  - type: cron
+    name: keepalive-streamlit
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python daily_task.py"
+    schedule: "*/15 * * * *"  # chạy mỗi 15 phút (UTC)
